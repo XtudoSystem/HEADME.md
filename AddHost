@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "\033[1;31mQual Dominio Você Deseja Adicionar ?\033[0m"
+read -p ": " domi
+echo "$domi" >> /etc/payload
+squid3 -k reconfigure 2> /dev/null
+squid -k reconfigure 2> /dev/null
+echo "\033[1;34m$domi Foi Adicionado\033[0m"
